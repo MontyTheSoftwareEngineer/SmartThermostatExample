@@ -1,4 +1,5 @@
 import QtQuick 2.0
+import Monty 1.0
 
 Rectangle {
     id: heatSelectDialog
@@ -63,11 +64,11 @@ Rectangle {
                 }
                 onClicked: {
                     if ( controlText === "Heat" )
-                        systemController.setSystemState( 0 )
+                        systemController.setSystemState( SystemController.HEATING )
                     else if ( controlText === "Cool" )
-                        systemController.setSystemState( 1 )
+                        systemController.setSystemState( SystemController.COOLING )
                     else if ( controlText === "Auto" )
-                        systemController.setSystemState( 2 )
+                        systemController.setSystemState( SystemController.AUTO )
 
                     heatSelectDialog.destroyMe()
                 }

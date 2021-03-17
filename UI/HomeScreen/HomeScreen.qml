@@ -1,5 +1,5 @@
 import QtQuick 2.0
-
+import Monty 1.0
 Item {
     id: homeScreen
     property var heatSelectDialogHolder: null
@@ -58,11 +58,11 @@ Item {
         width: 70
         height: 70
         source: {
-            if ( systemController.systemState === 0 )
+            if ( systemController.systemState === SystemController.HEATING )
                return "qrc:/UI/Assets/flame.png"
-            if ( systemController.systemState === 1 )
+            if ( systemController.systemState === SystemController.COOLING )
                return "qrc:/UI/Assets/ice-crystal.png"
-            if ( systemController.systemState === 2 )
+            if ( systemController.systemState === SystemController.AUTO )
                return "qrc:/UI/Assets/auto.png"
         }
         MouseArea {
